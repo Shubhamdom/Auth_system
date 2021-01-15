@@ -1,0 +1,44 @@
+{% load crispy_forms_tags %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add category</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+         <a class="navbar-brand" href="#">Techno</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                  <a class="nav-link" href="/admindash/">home</a>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="/#/">Add sub category</a>
+                </li>
+
+
+
+
+              </ul>
+            </div>
+     </nav>
+
+<div style="padding:30px;max-width:700px;width:600px;background-color:#696969;display: block;margin:auto;margin-top:100px;margin-bottom:100px;">
+<form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="text-center">
+                    <h2>Add category</h2>
+                </div>
+                {{ form|crispy }}
+</form>
+</div>
+
+
+</body>
+</html>

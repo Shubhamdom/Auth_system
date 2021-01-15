@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Add item</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+         <a class="navbar-brand" href="#">Techno</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                  <a class="nav-link" href="/additem/">Add item</a>
+                </li>
+                <li class="nav-item">
+
+                 <a class="nav-link" href="/dash/">home</a>
+                </li>
+              </ul>
+            </div>
+     </nav>
+
+ <div style="padding:30px;max-width:700px;width:600px;background-color:#87CEEB;display: block;margin:auto;margin-top:100px;margin-bottom:100px;">
+        <form method="POST" action="/additem/">
+           {% csrf_token %}
+            <div class="text-center">
+                <h2>Add item</h2>
+            </div>
+
+
+
+             <div class="form-group">
+                <label for="name">Item Name:</label>
+                <input type="text" placeholder="Enter item name" class="form-control" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Item Price:</label>
+                <input type="text" placeholder="Enter price" class="form-control" name="price" required>
+            </div>
+            <div class="form-group">
+
+                 <div class="col-md-11 mb-3">
+                    <label for="validationCustom03">Category:</label>
+                      <select class="form-control form-control-lg" name="category" id="validationCustom03" onchange="ChangecatList()" required>
+                        <option value="">Choose... </option>
+                        <option value="Mobile">Mobile</option>
+                        <option value="Food">Food</option>
+                        <option value="Cloth">Cloth</option>
+                        <option value="TV">Tv</option>
+                        <option value="Laptop">Laptop</option>
+                        <option value="Book">Book</option>
+                        <option value="Language">Language</option>
+
+                      </select>
+                    <div class="invalid-feedback">
+                        Please provide a category.
+                    </div>
+                  </div>
+                <!--<input list="category" name="category" /></label>
+                <datalist id="category">
+                  <option value="food">
+                  <option value="Mobile">
+                  <option value="Cloth">
+                  <option value="Book">
+                  <option value="Music">
+
+                </datalist>-->
+
+            </div>
+            <div class="form-group">
+                 <div class="col-md-11 mb-3">
+                    <label for="validationCustom04">Sub Category:</label>
+                     <select class="form-control form-control-lg" id="validationCustom04" name="activity" required></select>
+                    <div class="invalid-feedback">
+                        Please provide an activity.
+                    </div>
+                  </div>
+            </div>
+
+
+           <div class="form-group">
+                <label for="qut">description:</label>
+                <textarea  placeholder="Enter description" row="15" cols="70" class="form-control" name="qut" required></textarea>
+            </div>
+             <div class="text-center">
+                <button type="submit"  class="btn btn-success ">add item</button>
+            </div>
+        </form>
+
+    </div>
+
+<footer style="background-color:black" class="page-footer font-small stylish-color-dark pt-4 text-white">
+    <!-- Footer Links -->
+      <div class="container text-center text-md-left">
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-4 mx-auto">
+            <!-- Content -->
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
+            <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+              consectetur
+              adipisicing elit.</p>
+          </div>
+          <!-- Grid column -->
+          <hr class="clearfix w-100 d-md-none">
+          <!-- Grid column -->
+          <div class="col-md-2 mx-auto">
+            <!-- Links -->
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+          <hr class="clearfix w-100 d-md-none">
+          <!-- Grid column -->
+          <div class="col-md-2 mx-auto">
+            <!-- Links -->
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+          <hr class="clearfix w-100 d-md-none">
+          <!-- Grid column -->
+          <div class="col-md-2 mx-auto">
+            <!-- Links -->
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+      <!-- Footer Links -->
+      <hr>
+
+      <hr>
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fab fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-google-plus-g"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fab fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+
+    </footer>
+
+<script>
+    var catAndActs = {};
+    catAndActs['Mobile'] = ['select','IPhone', 'one Plus', 'Mi', 'samsung','oppo', 'Other'];
+    catAndActs['Food'] = ['select','Pizza', 'Vadapav', 'Burger', 'Other'];
+    catAndActs['Cloth'] = ['select','Mens cloth', 'Women Cloth', 'shirt', 'T-shirt', 'Other'];
+    catAndActs['TV'] = ['select','Mi TV', 'Samsung Tv', 'Onida', 'LG Tv', 'One plus', 'Other'];
+    catAndActs['Laptop'] = ['select','MSI','Dell','HP','lenovo','Other'];
+    catAndActs['Book'] = ['select','The Great Gatsby','One Hundred Years of Solitude','other'];
+    catAndActs['Language'] = ['select','Java', 'C ','python','c++','other'];
+    catAndActs['Pupil Services'] = ['IEP Meeting', 'IEP Writing'];
+
+    function ChangecatList() {
+        var catList = document.getElementById("validationCustom03");
+        var actList = document.getElementById("validationCustom04");
+        var selCat = catList.options[catList.selectedIndex].value;
+        while (actList.options.length) {
+            actList.remove(0);
+        }
+        var cats = catAndActs[selCat];
+        if (cats) {
+            var i;
+            for (i = 0; i < cats.length; i++) {
+                var cat = new Option(cats[i], i);
+                actList.options.add(cat);
+            }
+        }
+    }
+
+</script>
+
+
+
+</body>
+</html>
